@@ -16,7 +16,7 @@ public class Movie {
 	
 	private String title;
 	private float rating;
-	private int relaeaseYear;
+	private int releaseYear;
 	
 	public int getId() {
 		return id;
@@ -30,11 +30,11 @@ public class Movie {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public int getRelaeaseYear() {
-		return relaeaseYear;
+	public int getReleaseYear() {
+		return releaseYear;
 	}
-	public void setRelaeaseYear(int year) {
-		this.relaeaseYear = year;
+	public void setReleaseYear(int year) {
+		this.releaseYear = year;
 	}
 	public float getRating() {
 		return rating;
@@ -45,7 +45,7 @@ public class Movie {
 	
 	@Override
 	public String toString() {
-		return "Movie [title=" + title + ", year=" + relaeaseYear + ", rating=" + rating + "]";
+		return "Movie [title=" + title + ", year=" + releaseYear + ", rating=" + rating + "]";
 	}
 	
 }

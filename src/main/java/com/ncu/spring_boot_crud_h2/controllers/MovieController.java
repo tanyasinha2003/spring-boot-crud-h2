@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ncu.spring_boot_crud_h2.entities.Movie;
 import com.ncu.spring_boot_crud_h2.repositories.MovieRepository;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @Controller
 //@RestController is a combination of @Controller and @ResponseBody
@@ -24,7 +27,7 @@ public class MovieController {
 	@Autowired
 	private MovieRepository repo;
 	
-	@GetMapping("get-all-movies")
+	@GetMapping("/movies")
 	@ResponseBody
 	public List<Movie> getAllMovies(){
 //		Movie m1= new Movie();
@@ -45,17 +48,29 @@ public class MovieController {
 	
 		return repo.findAll();
 	}
+
 	
-	@GetMapping("saveInDb")
+	// @GetMapping("saveInDb")
+	// @ResponseBody
+	// public Movie saveMovieInDatabase() {
+	// 	Movie m1= new Movie();
+	// 	m1.setId(1);
+	// 	m1.setTitle("abc");
+	// 	m1.setReleaseYear(2020);
+	// 	m1.setRating(4);
+		
+	// 	return repo.save(m1);
+		
+	// }
+
+	@PostMapping("/movies")
 	@ResponseBody
-	public Movie saveMovieInDatabase() {
-		Movie m1= new Movie();
-		m1.setId(1);
-		m1.setTitle("abc");
-		m1.setRelaeaseYear(2020);
-		m1.setRating(4);
+	public Movie saveMovie(@RequestBody Movie movie) {
+		//TODO: process POST request
 		
-		return repo.save(m1);
-		
+		return repo.save(movie);
 	}
+
+
+	
 }

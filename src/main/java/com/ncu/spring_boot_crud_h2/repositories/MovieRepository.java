@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.ncu.spring_boot_crud_h2.entities.Movie;
 
-public interface MovieRepository extends JpaRepository<Movie, Movie> {
+public interface MovieRepository extends JpaRepository<Movie, Integer> {
 	
 	
 }
